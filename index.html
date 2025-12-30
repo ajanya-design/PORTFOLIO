@@ -1,99 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ajanya Ramadas | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      margin-top: 20px;
-      border-radius: 6px;
-    }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-      color: #666;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Ajanya Ramadas | Creative Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --grad: linear-gradient(135deg,#6a11cb,#2575fc);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f0f1a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:radial-gradient(circle at top,#1b1b3a,#0f0f1a);
+}
+
+.hero h1{
+  font-size:3.5rem;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  margin:15px 0;
+  opacity:0.9;
+}
+
+.hero button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:var(--grad);
+  color:white;
+  cursor:pointer;
+  font-size:1rem;
+}
+
+/* SECTION */
+section{
+  padding:80px 10%;
+}
+
+/* GLASS CARD */
+.card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border-radius:15px;
+  padding:30px;
+  margin-bottom:30px;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,0.12);
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.skill{
+  padding:20px;
+  border-radius:12px;
+  background:linear-gradient(145deg,#1c1c3a,#14142b);
+  text-align:center;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  opacity:0.6;
+  font-size:0.9rem;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>Ajanya Ramadas</h1>
-  <p>Electronics & Communication Engineer</p>
-</header>
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Ajanya Ramadas</h1>
+    <p>Electronics Engineer • IoT • Creative Technologist</p>
+    <button onclick="scrollToAbout()">Explore My Work</button>
+  </div>
+</div>
 
-<section>
-  <h2>About Me</h2>
-  <p>
-    B.Tech graduate in Electronics and Communication Engineering with experience
-    in IoT, image processing, and STEM education initiatives.
-  </p>
+<!-- ABOUT -->
+<section id="about" class="fade">
+  <div class="card">
+    <h2>About Me</h2>
+    <p>
+      I am an Electronics & Communication Engineer passionate about
+      blending technology, creativity, and real-world impact.
+      I work with IoT, embedded systems, and innovative tech education.
+    </p>
+  </div>
 </section>
 
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li>HTML, CSS, Basics of JavaScript</li>
-    <li>Python, Raspberry Pi</li>
-    <li>IoT & Embedded Systems</li>
-    <li>Digital Electronics</li>
-  </ul>
+<!-- SKILLS -->
+<section class="fade">
+  <h2>Skills</h2><br>
+  <div class="skills">
+    <div class="skill">HTML • CSS • JS</div>
+    <div class="skill">Python • Raspberry Pi</div>
+    <div class="skill">IoT & Embedded Systems</div>
+    <div class="skill">Digital Electronics</div>
+  </div>
 </section>
 
-<section>
-  <h2>Projects</h2>
-  <ul>
-    <li><b>Laparoscopic Image Dehazing</b> – Cyclic GAN based model</li>
-    <li><b>Smart Trolley System</b> – Automated checkout concept</li>
-    <li><b>EcoRide Electric Bike</b> – Manufacturing feasibility study</li>
-  </ul>
+<!-- PROJECTS -->
+<section class="fade">
+  <h2>Projects</h2><br>
+  <div class="projects">
+    <div class="card">
+      <h3>Laparoscopic Image Dehazing</h3>
+      <p>Cyclic GAN based medical image enhancement.</p>
+    </div>
+    <div class="card">
+      <h3>Smart Trolley</h3>
+      <p>Automated checkout & smart shopping experience.</p>
+    </div>
+    <div class="card">
+      <h3>EcoRide Electric Bike</h3>
+      <p>EV manufacturing and feasibility analysis.</p>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Contact</h2>
-  <p>Email: yourmail@example.com</p>
-  <p>LinkedIn: linkedin.com/in/yourprofile</p>
-  <a class="btn" href="#">Download Resume</a>
+<!-- CONTACT -->
+<section class="fade">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: yourmail@example.com</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+  </div>
 </section>
 
 <footer>
   © 2025 Ajanya Ramadas
 </footer>
+
+<script>
+function scrollToAbout(){
+  document.getElementById("about").scrollIntoView({behavior:"smooth"});
+}
+
+const fades=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  fades.forEach(f=>{
+    if(f.getBoundingClientRect().top<window.innerHeight-100){
+      f.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
